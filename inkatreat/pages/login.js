@@ -44,6 +44,9 @@ export default function Login() {
             
             </Logeo>        
             <style jsx> {`
+            p{
+                color:gray;
+            }
                     a{
                         color:tomato;
                     }
@@ -84,7 +87,7 @@ export default function Login() {
                     }
 
                     img{
-                        width: 10rem;
+                        width: 8rem;
                         position: absolute;
                         margin-bottom:30vh;
 
@@ -98,6 +101,20 @@ export default function Login() {
                     }
                     h2{
                         margin-bottom:15px
+                    }
+
+                    @media (max-width:420px){
+
+                    img{
+                        display:none;
+                    }
+
+                    .form{
+                    width: 100%;
+                    margin:0 ;
+                    padding:0;
+                    margin-top:20px
+                    }
                     }
 
                 

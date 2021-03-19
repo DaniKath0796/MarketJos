@@ -10,6 +10,7 @@ export default function  Centrado ({children,name}){
     {
     display: grid;    
     place-items: center;
+    margin-top:8vh
 }` 
 }
 

@@ -15,10 +15,10 @@ export default function Buttom({children, onClick,color='#307e11'}){
                 cursor:pointer;
                 display:flex;
                 border-radius:9999px;
-                font-size:16px;
+                font-size:12px;
                 font-weight:600;
                 padding:8px 24px;
-                margin:10px;
+                margin:5px;
                 transition: opacity .3s ease;
                 width:70%;
 

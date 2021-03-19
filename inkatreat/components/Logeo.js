@@ -17,7 +17,7 @@ export default function  Logeo ({children,name}){
                 
                     div {
                 display: grid;
-                height: 70vh;
+                height: 80vh;
                 width: 100%;
                 align: center;
                 margin: 0 auto;                
@@ -28,6 +28,11 @@ export default function  Logeo ({children,name}){
                 z-index: 1;
                 
             }
+            @media (max-width:500px){
+                div{
+                height:90vh;
+            }
+            }
             main {
                 background: #fff;
                 border-radius: 10px;
@@ -37,13 +42,13 @@ export default function  Logeo ({children,name}){
                 align-items: center;
             }
             main  h1{  
-    font-size: 25px;
-  margin-top: 50px;
-  margin-bottom:50px;
-  color: #fec107;
-  text-transform: uppercase;
-  text-align: center;
-}
+            font-size: 25px;
+            margin-top: 50px;
+            margin-bottom:50px;
+            color: #fec107;
+            text-transform: uppercase;
+            text-align: center;
+            }
 
                             @media (min-width:600px){
                             main{
@@ -53,7 +58,11 @@ export default function  Logeo ({children,name}){
                             div {
 
                                 max-width:${breakpoint.mobile};
+                                
+                                
                             }
+
+                           
                             
                             `}
                     </style>

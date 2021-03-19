@@ -10,18 +10,22 @@ export default function Login() {
     return(
     <>
  <Head>
-        <title>Inicia sesion</title>
+        <title>Registrate</title>
         <link rel="icon" href="/favicon.ico" />
         
 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       </Head>
-      <Logeo name="Inicia Sesión"> 
+      <Logeo name="Registrate"> 
       <section>
             
-            <img src='/okay.png' alt='Logo'></img>
             
+      <img src='/okay.png' alt='Logo'></img>
          
             <div className='form'>
+            <div>
+               
+            </div>
+
                 <div className='input-field'>
                           <label> Correo electronico</label>
                           <input type='email' className='input'/>
@@ -48,6 +52,9 @@ export default function Login() {
             
             </Logeo>        
             <style jsx> {`
+            p{
+                color:gray;
+            }
                     a{
                         color:tomato;
                     }
@@ -88,9 +95,9 @@ export default function Login() {
                     }
 
                     img{
-                        width: 10rem;
+                        width: 8rem;
                         position: absolute;
-                        margin-bottom:30vh;
+                        margin-bottom:35vh;
 
                     }
 
@@ -104,7 +111,19 @@ export default function Login() {
                         margin-bottom:15px
                     }
 
-                
+                    @media (max-width:420px){
+
+                        img{
+                            display:none;
+                        }
+
+                        .form{
+                        width: 100%;
+                        margin:0 ;
+                        padding:0;
+                        margin-top:40px
+                    }
+                    }
                             `}
                     </style>
 

@@ -17,7 +17,7 @@ export default function  VendedorRegistro ({children,name}){
                 
                     div {
                 display: grid;
-                height: 70vh;
+                height: 80vh;
                 width: 100%;
                 align: center;
                 margin: 0 auto;                

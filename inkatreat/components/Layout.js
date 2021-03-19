@@ -11,7 +11,7 @@ export default function Layout({children}){
   <NavHeader/>
                 <div className={styles.container}>
                 <main className={styles.main}>
-                <Header></Header>
+               
 
                 {children}
         
