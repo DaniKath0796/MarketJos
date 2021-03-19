@@ -1,0 +1,33 @@
+.nav{
+height:1.5rem;
+width:100%;
+padding:10px;
+background:#dfa812;
+color:white;
+display:flex;
+align-items:center;
+justify-content:flex-start;
+text-align:center;
+position: fixed;
+top:0;
+z-index:1000;
+}
+
+
+
+.nav ul{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    list-style:none;
+    text-size-adjust:auto;
+    font-size: .8em;
+    
+}
+
+
+  
+  .nav ul li a {
+    margin: 5px 10px;
+    display: block;
+  }

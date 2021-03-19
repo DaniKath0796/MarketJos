@@ -1,0 +1,55 @@
+
+.titulo {
+  padding: 5vh;
+  margin: 0 ;
+  width:100%;
+  line-height:1.6;
+  font-size: 3rem;
+  text-align:start;
+  margin-top: 0;
+  background-color:rgb(48, 126, 17)
+
+}
+
+.titulo h1{
+  color:#fcfcfc;
+  font-size:3rem;
+}
+
+.titulo a,
+.titulo span {
+  color: #ffa602;
+  text-decoration: none;
+  align-items: center;
+  font-size: 3rem;  
+  min-width:250px;
+  margin-top: 2em;
+}
+
+
+.titulo a:hover,
+.titulo a:focus,
+.titulo a:active {
+  text-decoration: underline;
+}
+
+
+
+.titulo,
+.description {
+  text-align: center;
+}
+
+.description {
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .titulo{
+    max-width: 95%; 
+  margin: 0 auto;
+border-radius: .1em; }
+
+
+  }
