@@ -3,9 +3,36 @@ import Logeo from '../components/Logeo'
 import Button from '../components/Buttom'
 import Centrado from '../components/Centrado'
 import VendedorRegistro from '../components/VendedorRegistro'
+import {useState} from 'react'
+import valid from '../utils/validTienda'
+import {PostData} from '../utils/fetchData'
 
 export default function RegistroVendedor(){
 
+  const initialState = { nombreTienda: '', nombreEncargado: '', email: '', password: '', cf_password: '', tipoTienda: '', celularContacto: '', direccion: ''}
+  const [userData, setUserData] = useState(initialState)
+  const { nombreTienda, nombreEncargado, email, password, cf_password, tipoTienda, celularContacto, direccion } = userData
+  
+  const handleChangeInput = e => {
+      const {name, value} = e.target
+      setUserData({...userData, [name]:value})
+  }
+
+  function selectNext(){
+    var select = document.getElementById('tipoTienda');
+    select.selectedIndex
+    setUserData({...userData, ['tipoTienda']:select.value})
+  }
+
+  const handleSubmit = async e => {
+      e.preventDefault()
+      console.log(userData)
+      const errMsg = valid(nombreTienda, nombreEncargado, email, password, cf_password, tipoTienda, celularContacto, direccion)
+      if(errMsg) console.log(errMsg)
+      const res = await PostData('auth/registroTienda', userData)
+      if(res.err) console.log(res.err)
+  }
+  
     return(
 
         <>
@@ -23,44 +50,51 @@ export default function RegistroVendedor(){
               <div className='form'>
                   <div className='input-field'>
                       <label> Nombre de tienda</label>
-                      <input type='text' className='input' />
+                      <input type='text' className='input' 
+                      name="nombreTienda" value={nombreTienda} onChange={handleChangeInput}/>
                   </div>
                   <div className='input-field'>
                       <label> Nombre de Encargado</label>
-                      <input type='text' className='input' />
+                      <input type='text' className='input' 
+                      name="nombreEncargado" value={nombreEncargado} onChange={handleChangeInput}/>
                   </div>
           
                   <div className='input-field'>
                       <label> Contraseña</label>
-                      <input type='password' className='input' />
+                      <input type='password' className='input' 
+                      name="password" value={password} onChange={handleChangeInput}/>
                   </div>
                   <div className='input-field'>
                       <label> Confirmar contraseña</label>
-                      <input type='password' className='input' />
+                      <input type='password' className='input' 
+                      name="cf_password" value={cf_password} onChange={handleChangeInput}/>
                   </div>
           
                   <div className='input-field'>
                       <label> Tipo de tienda</label>
                       <div className='custom-select'>
-                          <select>
-                              <option value=''>Seleccionar </option>
-                              <option value='tiendaFisica'>Tienda Fisica </option>
-                              <option value='tiendaHogar'>Tienda Hogar </option>
+                          <select id='tipoTienda' onChange={selectNext}>
+                              <option value='Seleccionar'>Seleccionar </option>
+                              <option value='Tienda Fisica'>Tienda Fisica </option>
+                              <option value='Tienda Hogar'>Tienda Hogar </option>
           
                           </select>
                       </div>
                   </div>
                   <div className='input-field'>
                       <label> Email de la tienda</label>
-                      <input type='email' className='input'/>
+                      <input type='email' className='input'
+                      name="email" value={email} onChange={handleChangeInput}/>
                   </div>
                   <div className='input-field'>
                       <label> Numero telefonico de contacto</label>
-                      <input type='text' className='input'/>
+                      <input type='text' className='input'
+                      name="celularContacto" value={celularContacto} onChange={handleChangeInput}/>
                   </div>
                   <div className='input-field'>
                       <label> Dirección</label>
-                      <input type='text' className='input'/>
+                      <input type='text' className='input'
+                      name="direccion" value={direccion} onChange={handleChangeInput}/>
                   </div>
                   <Centrado>
                       <div className='input-field terms'>
@@ -71,7 +105,7 @@ export default function RegistroVendedor(){
                           <p> Acepto los terminos y condiciones del sitio</p>
                       </div>
                       <div className='input-field'>
-                          <Button> Registro</Button>
+                          <Button onClick={handleSubmit}> Registro</Button>
                       </div>
                   </Centrado>
               </div>

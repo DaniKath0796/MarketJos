@@ -1,65 +1,87 @@
-import Link from 'next/link'
-import navStyles from '../styles/NavHeader.module.css'
-import { useState} from 'react'
-import MainSvg from './Svg/MainSvg'
-import CloseSvg from './Svg/CloseSvg'
-import PerfilSvg from './Svg/PerfilSvg'
+import Link from "next/link";
+import navStyles from "../styles/NavHeader.module.css";
+import { useState, useContext } from "react";
+import MainSvg from "./Svg/MainSvg";
+import CloseSvg from "./Svg/CloseSvg";
+import PerfilSvg from "./Svg/PerfilSvg";
+import { DataContext } from "../store/GlobalState";
 
+const Nav = () => {
+  const [click, setClick] = useState(false);
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
 
+  const { state, dispatch } = useContext(DataContext);
+  const { auth } = state;
 
-const Nav = ()=>{
-        const [click, setClick] = useState(false);
-        const handleClick = () => setClick(!click);
-        const closeMobileMenu = () => setClick(false);
-
-    return(
-        <>
-        <div className={navStyles.header}>
+  return (
+    <>
+      <div className={navStyles.header}>
         <div className={navStyles.nav}>
-        
-        <div className={navStyles.mobileMenu} onClick={handleClick}>
-        {click ? ( <CloseSvg fill={'white'} width='20px' height= '20px' className={navStyles.menuIcon}/>) :( 
-            <MainSvg fill={'white'} width='20px' height= '20px' className={navStyles.menuIcon}/>) } 
+          <div className={navStyles.mobileMenu} onClick={handleClick}>
+            {click ? (
+              <CloseSvg
+                fill={"white"}
+                width="20px"
+                height="20px"
+                className={navStyles.menuIcon}
+              />
+            ) : (
+              <MainSvg
+                fill={"white"}
+                width="20px"
+                height="20px"
+                className={navStyles.menuIcon}
+              />
+            )}
+          </div>
+
+          <div className={navStyles.abcd}>
+            <Link href="/"> Inkatreat</Link>
+          </div>
+          <ul className={click ? "navOption active" : "navOption"}>
+            <li className={navStyles.option} onClick={closeMobileMenu}>
+              <Link href="/"> Beneficios</Link>
+            </li>
+
+            <li className={navStyles.option} onClick={closeMobileMenu}>
+              <Link href="/categorias"> Categorias</Link>
+            </li>
+
+            <li className={navStyles.option} onClick={closeMobileMenu}>
+              {" "}
+              <Link href="/registroVendedor">
+                <a>Unete a nosotros</a>
+              </Link>
+            </li>
+
+            <li
+              className={(navStyles.option, navStyles.optionMobile)}
+              onClick={closeMobileMenu}
+            >
+              <Link href="/">
+                <a> Home</a>
+              </Link>
+            </li>
+
+            <li
+              className={(navStyles.option, navStyles.optionMobile)}
+              onClick={closeMobileMenu}
+            >
+              <Link href="/login"> Identificate</Link>
+            </li>
+          </ul>
         </div>
-
-        <div className={navStyles.abcd}> <Link  href= '/'> Inkatreat</Link> </div>
-        <ul className={click ? 'navOption active' : 'navOption'}>
-            <li className={navStyles.option} onClick={closeMobileMenu}>
-                <Link href= '/'> Beneficios</Link>
-            </li>
-
-            <li className={navStyles.option} onClick={closeMobileMenu}>
-                <Link href='/categorias'> Categorias</Link> 
-            </li>
-
-            <li className={navStyles.option} onClick={closeMobileMenu}> <Link href='/registroVendedor'><a>Unete a nosotros</a></Link></li>
-
-            <li className={navStyles.option, navStyles.optionMobile} onClick={closeMobileMenu}>
-                <Link href= '/'><a> Home</a></Link>
-            </li>
-
-            <li className={navStyles.option, navStyles.optionMobile} onClick={closeMobileMenu}>
-            <Link href='/login'> Identificate</Link></li>
-
-            
-
- 
-
+        <ul className="singinUp">
+          <li className={navStyles.singin} onClick={closeMobileMenu}>
+            <Link href="/login"> Identificate</Link>
+          </li>
+          <PerfilSvg fill={"white"} width={"20px"} />
         </ul>
+      </div>
 
-
-        </div>
-        <ul className='singinUp'> 
-                <li className={navStyles.singin} onClick={closeMobileMenu} >
-                    <Link href='/login'> Identificate</Link></li>
-                    <PerfilSvg fill={'white'} width={'20px'}/>
-                </ul>
-          
-            
-       
-        </div>
-
-        <style jsx> {`
+      <style jsx>
+        {`
         .singinUp{
       display:flex;
       list-style-type:none;
@@ -130,10 +152,9 @@ const Nav = ()=>{
 
         }
                         `}
-                </style>
+      </style>
+    </>
+  );
+};
 
-        </>
-        )
-}
-
-export default Nav
+export default Nav;

@@ -1,19 +1,18 @@
-import Link from 'next/link'
-import loginStyles from '../styles/Login.module.css'
-import {breakpoint} from '../styles/theme'
+import Link from "next/link";
+import loginStyles from "../styles/Login.module.css";
+import { breakpoint } from "../styles/theme";
 
-export default function  VendedorRegistro ({children,name}){
-    return(
-        <>
-        
-        <div  className={loginStyles.login}>
-       
-            <main>
-            <h1> {name}</h1>
-            {children}
-            </main>
-        </div>
-                    <style jsx> {`
+export default function VendedorRegistro({ children, name }) {
+  return (
+    <>
+      <div className={loginStyles.login}>
+        <main>
+          <h1> {name}</h1>
+          {children}
+        </main>
+      </div>
+      <style jsx>
+        {`
                 
                     div {
                 display: grid;
@@ -59,15 +58,7 @@ export default function  VendedorRegistro ({children,name}){
                             }
                             
                             `}
-                    </style>
-                    
-     
-        
-        
-        </>
-        
-        
-        
-        )
+      </style>
+    </>
+  );
 }
-
