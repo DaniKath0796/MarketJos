@@ -1,11 +1,11 @@
 import headerStyles from "../styles/Header.module.css";
 
-const Header = () => {
+const Header = ({nombre='Nombre de la tienda'}) => {
   return (
     <>
       <div className={headerStyles.titulo}>
         <h1>
-          Inka<span>treat</span>
+          {nombre}
         </h1>
       </div>
 

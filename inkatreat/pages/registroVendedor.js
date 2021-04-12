@@ -183,7 +183,7 @@ export default function RegistroVendedor(){
 .wrapper .form .input-field .input:focus,
 .wrapper .form .input-field .textarea:focus,
 .wrapper .form .input-field .custom-select select:focus{
-  border: 1px solid #fec107;
+  border: 1px solid #242525;
 }
 
 .wrapper .form .input-field p{
@@ -206,7 +206,7 @@ export default function RegistroVendedor(){
 .wrapper .form .input-field .check .checkmark{
   width: 15px;
   height: 15px;
-  border: 1px solid #fec107;
+  border: 1px solid #242525;
   display: block;
   position: relative;
 }
@@ -223,7 +223,7 @@ export default function RegistroVendedor(){
   display: none;
 }
 .wrapper .form .input-field .check input[type="checkbox"]:checked ~ .checkmark{
-  background: #fec107;
+  background: #242525;
 }
 
 .wrapper .form .input-field .check input[type="checkbox"]:checked ~ .checkmark:before{
@@ -235,7 +235,7 @@ export default function RegistroVendedor(){
    padding: 8px 10px;
   font-size: 15px; 
   border: 0px;
-  background:  #fec107;
+  background:  #242525;
   color: #fff;
   cursor: pointer;
   border-radius: 3px;
@@ -243,7 +243,7 @@ export default function RegistroVendedor(){
 }
 
 .wrapper .form .input-field .btn:hover{
-  background: #ffd658;
+  background: #242525;
 }
 
 .wrapper .form .input-field:last-child{

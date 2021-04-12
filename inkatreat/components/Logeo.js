@@ -9,6 +9,7 @@ export default function Logeo({ children, name }) {
         <main>
           <h1> {name}</h1>
           {children}
+          
         </main>
       </div>
       <style jsx>
@@ -44,8 +45,7 @@ export default function Logeo({ children, name }) {
             font-size: 25px;
             margin-top: 50px;
             margin-bottom:50px;
-            color: #fec107;
-            text-transform: uppercase;
+            color: #191919;
             text-align: center;
             }
 

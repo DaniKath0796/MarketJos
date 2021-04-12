@@ -1,7 +1,7 @@
 /* Desktop*/
 .header {
   display: flex;
-  background: orange;
+  background: #191919;
   justify-content: space-between;
   align-items: flex-end;
   padding: 0px 10px;
@@ -9,7 +9,12 @@
   width:100%;
   color: white;
   text-align:center;
-  margin-bottom:5vh;
+  bottom: 50px;
+  margin:0 auto;
+  margin-top:0;
+  position: fixed;
+top:0;
+z-index:1000;
 }
 
 
@@ -108,12 +113,12 @@ padding-right: 20px;
          
         }
         .optionMobile:hover{
-          background-color:#f7c53b;
+          background-color:#242525;
         }
 
         .option:hover{
           color:white;
-          background-color:#f7c53b;
+          background-color:#242525;
         }
         
       }

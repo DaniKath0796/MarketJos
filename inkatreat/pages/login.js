@@ -66,8 +66,7 @@ export default function Login() {
       </Head>
       <Logeo name="Inicia Sesión">
         <section>
-          <img src="/okay.png" alt="Logo"></img>
-
+         
           <div className="form">
             <div className="input-field">
               <label> Correo electronico</label>
@@ -147,14 +146,9 @@ export default function Login() {
           }
 
           .form .input-field .input:focus {
-            border: 0.1px solid #fec107;
+            border: 0.1px solid #242525;
           }
 
-          img {
-            width: 8rem;
-            position: absolute;
-            margin-bottom: 30vh;
-          }
 
           section {
             display: grid;

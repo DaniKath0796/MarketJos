@@ -6,20 +6,17 @@ const Nav = () => {
     <nav className={navStyles.nav}>
       <ul>
         <li>
-          <Link href="/"> Home</Link>
+          <Link href="/#"> Los mas vendidos</Link>
         </li>
 
         <li>
-          <Link href="/categorias"> Categorias</Link>
+          <Link href="/"> Menores precios</Link>
         </li>
 
         <li>
-          <Link href="/registroVendedor">Unete a nosotros</Link>
+          <Link href="/">Mejor Calificacion</Link>
         </li>
 
-        <li>
-          <Link href="/login"> Mi cuenta</Link>
-        </li>
       </ul>
     </nav>
   );

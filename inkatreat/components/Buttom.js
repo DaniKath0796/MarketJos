@@ -1,4 +1,4 @@
-export default function Buttom({ children, onClick, color = "#307e11" }) {
+export default function Buttom({ children, onClick, color = "#242525" }) {
   return (
     <>
       <button onClick={onClick}>{children}</button>

@@ -1,8 +1,15 @@
+@font-face {
+  font-family: 'NegozioPlus';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('NegozioPlus'), url(../public/fonts/NegozioPlus.ttf) format('truetype');
+}
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: NegozioPlus,-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 
     background-image: radial-gradient(#ebc726, transparent 1px, 	#f6f7f9 1px),

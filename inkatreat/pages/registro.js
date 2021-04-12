@@ -49,7 +49,6 @@ export default function Register() {
       </Head>
       <Logeo name="Registrate">
         <section>
-          <img src="/okay.png" alt="Logo"></img>
 
           <div className="form">
             <div></div>
@@ -67,6 +66,7 @@ export default function Register() {
             <div className="input-field">
               <label> Correo electronico</label>
               <input
+              required
                 type="email"
                 className="input"
                 name="email"
@@ -77,6 +77,7 @@ export default function Register() {
             <div className="input-field">
               <label> Contraseña</label>
               <input
+              required
                 type="password"
                 className="input"
                 name="password"
@@ -87,6 +88,7 @@ export default function Register() {
             <div className="input-field">
               <label> Confirmar contraseña</label>
               <input
+              required
                 type="password"
                 className="input"
                 name="cf_password"
@@ -112,7 +114,10 @@ export default function Register() {
             </Button>
           </Centrado>
         </section>
+ 
       </Logeo>
+
+  
       <style jsx>
         {`
           p {
@@ -152,15 +157,10 @@ export default function Register() {
           }
 
           .form .input-field .input:focus {
-            border: 0.1px solid #fec107;
+            border: 0.1px solid #242525;
           }
 
-          img {
-            width: 8rem;
-            position: absolute;
-            margin-bottom: 35vh;
-          }
-
+          
           section {
             display: grid;
             height: 50vh;

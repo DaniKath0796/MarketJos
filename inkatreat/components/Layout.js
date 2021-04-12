@@ -9,12 +9,20 @@ export default function Layout({ children }) {
   return (
     <>
       <NavHeader />
+     <div className='separator'> </div>
       <div className={styles.container}>
         <main className={styles.main}>
           <Notify />
           {children}
         </main>
       </div>
+
+      <style jsx>{`
+      .separator{
+        height:50px;
+      }
+      `}
+      </style>
     </>
   );
 }
