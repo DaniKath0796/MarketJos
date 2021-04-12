@@ -19,7 +19,7 @@ export default function Layout({ children }) {
 
       <style jsx>{`
       .separator{
-        height:50px;
+        height:200px;
       }
       `}
       </style>

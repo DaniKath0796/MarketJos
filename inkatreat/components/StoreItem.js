@@ -10,7 +10,9 @@ export default function StoreItem({
   return (
     //para las imagenes de los logos hay que poner la restriccion de que sea una imaden cuadrada
     <>
+    
       <div className="prueba">
+      <div className='redirect'><Link href="/pruebaStore"><a></a></Link></div>
         <div className="container">
           <div className="header">
             <div className="ima">
@@ -23,22 +25,33 @@ export default function StoreItem({
             </div>
             <div className="card">
               <StoreSvg width={250} fill={color}>
-                {" "}
+                
               </StoreSvg>
             </div>
-            <Link href="#">
-              <a>{nombre}</a>
-            </Link>
+            
+              <h3>{nombre}</h3>
             <h6>{categoria}</h6>
           </div>
         </div>
       </div>
       <style jsx>
         {`
+        a{
+          position: absolute;
+          height: 280px;
+          width: 270px;
+          z-index: 1000;
+        }
           .prueba {
             display: block;
             margin-left: auto;
             margin-right: auto;
+            margin-bottom: 15px;
+            background-color:white;
+            border-radius: 15px;
+          }
+          .prueba:hover {
+            box-shadow: 0px 0px 20px .1px gray;
           }
           .container {
             align-items: center;
@@ -52,6 +65,8 @@ export default function StoreItem({
             padding: 8px 0;
             float: left;
             margin: 10px 10px;
+            background-color:white;
+            
           }
           .header {
             text-align: center;
@@ -59,6 +74,7 @@ export default function StoreItem({
 
             align-items: center;
             z-index: 10;
+            background-color:white;
           }
 
           .card {
@@ -66,6 +82,7 @@ export default function StoreItem({
             padding: 0 20;
             align-items: center;
             justify-content: center;
+            
           }
           .ima {
             position: absolute;
@@ -76,6 +93,8 @@ export default function StoreItem({
             margin: 70px 25px;
             height: 135px;
             width: 200px;
+            background-color:white;
+            
           }
 
           a,
@@ -85,6 +104,9 @@ export default function StoreItem({
             color: #242525;
             font-family: "roboto";
             cursor: pointer;
+          }
+          h3{
+            font-family:'roboto'
           }
         `}
       </style>
