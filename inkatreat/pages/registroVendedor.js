@@ -96,6 +96,14 @@ export default function RegistroVendedor(){
                       <input type='text' className='input'
                       name="direccion" value={direccion} onChange={handleChangeInput}/>
                   </div>
+
+                  <div className='input-field'>
+                  <label> Sube tu logo</label>
+                  <div className='up'>
+                  <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
+                  <input type="file" />
+                  </div>
+                  </div>
                   <Centrado>
                       <div className='input-field terms'>
                           <label className='check'>
@@ -153,6 +161,14 @@ export default function RegistroVendedor(){
   position: relative;
   width: 100%;
   height: 37px;
+}
+.up{
+  position: relative;
+  width: 100%;
+  height: 37px;
+  /*background: tomato;*/
+  font-size: 15px;
+  padding: 8px 10px;
 }
 
 .wrapper .form .input-field .custom-select:before{
