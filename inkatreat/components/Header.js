@@ -1,12 +1,10 @@
 import headerStyles from "../styles/Header.module.css";
 
-const Header = ({nombre='Nombre de la tienda'}) => {
+const Header = ({ nombre = "Nombre de la tienda" }) => {
   return (
     <>
       <div className={headerStyles.titulo}>
-        <h1>
-          {nombre}
-        </h1>
+        <h1>{nombre}</h1>
       </div>
 
       <style jsx>
