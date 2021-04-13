@@ -17,6 +17,7 @@ export default function RegistroVendedor() {
     tipoTienda: "",
     celularContacto: "",
     direccion: "",
+    logo: "",
   };
   const [userData, setUserData] = useState(initialState);
   const {
@@ -28,6 +29,7 @@ export default function RegistroVendedor() {
     tipoTienda,
     celularContacto,
     direccion,
+    logo,
   } = userData;
 
   const handleChangeInput = (e) => {
@@ -41,9 +43,17 @@ export default function RegistroVendedor() {
     setUserData({ ...userData, ["tipoTienda"]: select.value });
   }
 
+  const onChange = (e) => {
+    let files = e.target.files;
+    let reader = new FileReader();
+    reader.readAsDataURL(files[0]);
+    reader.onload = (e) => {
+      setUserData({ ...userData, ["logo"]: e.target.result });
+    };
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(userData);
     const errMsg = valid(
       nombreTienda,
       nombreEncargado,
@@ -161,8 +171,12 @@ export default function RegistroVendedor() {
               <label> Sube tu logo</label>
               <div className="up">
                 <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
-                <input type="file" accept=".png, .jpeg, .jpg"/>
-                
+                <input
+                  type="file"
+                  name="file"
+                  accept=".png, .jpeg, .jpg"
+                  onChange={onChange}
+                />
               </div>
             </div>
             <Centrado>

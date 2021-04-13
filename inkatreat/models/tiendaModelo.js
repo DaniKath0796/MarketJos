@@ -1,51 +1,58 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose";
 
-const tiendaSchema = new mongoose.Schema({
+const tiendaSchema = new mongoose.Schema(
+  {
     ruc: {
-        type: String
+      type: String,
     },
     coordenadaLocal: {
-        type: String
+      type: String,
     },
     direccion: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     nombreTienda: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     nombreEncargado: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     celularContacto: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     tipoTienda: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     calificacion: {
-        type: String
+      type: String,
     },
     email: {
-        type: String,
-        required: true,
-        unique: true
+      type: String,
+      required: true,
+      unique: true,
     },
     password: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
+    },
+    logo: {
+      type: String,
+      required: true,
     },
     role: {
-        type: String,
-        default: 'tienda'
-    }
-},{
-    timestamps: true
-})
+      type: String,
+      default: "tienda",
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 
-let Dataset = mongoose.models.tienda || mongoose.model('tienda', tiendaSchema)
-export default Dataset
+let Dataset = mongoose.models.tienda || mongoose.model("tienda", tiendaSchema);
+export default Dataset;

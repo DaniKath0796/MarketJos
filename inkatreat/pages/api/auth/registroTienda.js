@@ -1,38 +1,64 @@
-import connectDB from '../../../utils/connectDB'
-import Tienda from '../../../models/tiendaModelo'
-import valid from '../../../utils/validTienda'
-import bcrypt from 'bcrypt'
+import connectDB from "../../../utils/connectDB";
+import Tienda from "../../../models/tiendaModelo";
+import valid from "../../../utils/validTienda";
+import bcrypt from "bcrypt";
 
-connectDB()
+connectDB();
 
-export default async (req,res) => {
-    switch(req.method){
-        case "POST":
-            await registro(req,res)
-            break;
-    }
-}
+export default async (req, res) => {
+  switch (req.method) {
+    case "POST":
+      await registro(req, res);
+      break;
+  }
+};
 
-const registro = async (req,res) => {
-    try{
-        const { nombreTienda, nombreEncargado, email, password, cf_password, tipoTienda, celularContacto, direccion } = req.body
-        
-        const errMsg = valid(nombreTienda, nombreEncargado, email, password, cf_password, tipoTienda, celularContacto, direccion)
-        if(errMsg) return res.status(400).json({err:errMsg})
+const registro = async (req, res) => {
+  try {
+    const {
+      nombreTienda,
+      nombreEncargado,
+      email,
+      password,
+      cf_password,
+      tipoTienda,
+      celularContacto,
+      direccion,
+      logo,
+    } = req.body;
 
-        const user = await Tienda.findOne({email})
-        if(user) return res.status(400).json({err: 'El email ya existe.'})
+    const errMsg = valid(
+      nombreTienda,
+      nombreEncargado,
+      email,
+      password,
+      cf_password,
+      tipoTienda,
+      celularContacto,
+      direccion
+    );
+    if (errMsg) return res.status(400).json({ err: errMsg });
 
-        const passwordHash = await bcrypt.hash(password,12)
+    const user = await Tienda.findOne({ email });
+    if (user) return res.status(400).json({ err: "El email ya existe." });
 
-        const newUser = new Tienda({ 
-            nombreTienda, nombreEncargado, email, password: passwordHash, cf_password, tipoTienda, celularContacto, direccion
-        })
+    const passwordHash = await bcrypt.hash(password, 12);
 
-        await newUser.save()
-        res.json({msg: "Registro Exitoso"})
+    const newUser = new Tienda({
+      nombreTienda,
+      nombreEncargado,
+      email,
+      password: passwordHash,
+      cf_password,
+      tipoTienda,
+      celularContacto,
+      direccion,
+      logo,
+    });
 
-    }catch(err){
-        return res.status(500).json({err: err.message})
-    }
-}
+    await newUser.save();
+    res.json({ msg: "Registro Exitoso" });
+  } catch (err) {
+    return res.status(500).json({ err: err.message });
+  }
+};
