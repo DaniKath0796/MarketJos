@@ -7,7 +7,8 @@ export default function Centrado({ children, name }) {
           div {
             display: grid;
             place-items: center;
-            margin-top: 8vh;
+            margin-top: 10px;
+            padding-bottom: 20px;
           }
         `}
       </style>

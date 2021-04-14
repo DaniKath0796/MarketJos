@@ -12,8 +12,9 @@ export default function Buttom({ children, onClick, color = "#242525" }) {
             color: #fff;
             cursor: pointer;
             display: flex;
-            border-radius: 9999px;
-            font-size: 12px;
+            font-family:'Roboto';
+            border-radius: 5px;
+            font-size: 15px;
             font-weight: 600;
             padding: 8px 24px;
             margin: 5px;
@@ -22,7 +23,8 @@ export default function Buttom({ children, onClick, color = "#242525" }) {
           }
 
           button:hover {
-            opacity: 0.7;
+            opacity: 0.9;
+            box-shadow: 0px 0px 15px 0.1px #d6d6d6;
           }
 
           button > :global(svg) {

@@ -10,6 +10,8 @@ import { PostData } from "../utils/fetchData";
 import Cookie from "js-cookie";
 import { DataContext } from "../store/GlobalState";
 import { useRouter } from "next/router";
+import ShopSvg from "../components/Svg/ShopSvg";
+
 
 export default function Login() {
   const initialState = { email: "", password: "" };
@@ -66,7 +68,9 @@ export default function Login() {
       </Head>
       <Logeo name="Inicia Sesión">
         <section>
-         
+        <div className="imag">
+            <ShopSvg width={100} height={100} fill="#e71d36" />
+          </div>
           <div className="form">
             <div className="input-field">
               <label> Correo electronico</label>
@@ -86,24 +90,21 @@ export default function Login() {
                 name="password"
                 value={password}
                 onChange={handleChangeInput}
+                required={true}
               />
             </div>
           </div>
 
           <p>
-            No tienes cuenta aun?
+            No tienes cuenta aun? 
             <Link href="/registro">
-              <a>Registrate</a>
+              <a>   Registrate</a>
             </Link>
           </p>
 
           <Centrado>
-            <Button onClick={handleSubmit}>Ingresa</Button>
+            <Button color='#e71d36' onClick={handleSubmit}>Ingresa</Button>
 
-            <Button>
-              <GoogleSvg width={25} height={25} />
-              Logeate con google
-            </Button>
           </Centrado>
         </section>
       </Logeo>
@@ -113,13 +114,17 @@ export default function Login() {
             color: gray;
           }
           a {
-            color: tomato;
+            color: #e71d36;
+          }
+          .imag {
+            margin: 0 auto;
+            padding-top:0;
           }
           .form {
             width: 100%;
-            padding-top: 20vh;
-            margin-top: 30px;
-            margin-bottom: 20px;
+            padding-top: 2vh;
+            margin-top: 0px;
+            margin-bottom: 0px;
           }
 
           .form .input-field {
@@ -146,7 +151,7 @@ export default function Login() {
           }
 
           .form .input-field .input:focus {
-            border: 0.1px solid #242525;
+            border: 0.1px solid #e71d36;
           }
 
 

@@ -2,7 +2,7 @@ import Link from "next/link";
 import loginStyles from "../styles/Login.module.css";
 import { breakpoint } from "../styles/theme";
 
-export default function Logeo({ children, name }) {
+export default function Logeo({ children, name,pad=0}) {
   return (
     <>
       <div className={loginStyles.login}>
@@ -17,7 +17,7 @@ export default function Logeo({ children, name }) {
                 
                     div {
                 display: grid;
-                height: 80vh;
+                height: 80%;
                 width: 100%;
                 align: center;
                 margin: 0 auto;                
@@ -43,9 +43,10 @@ export default function Logeo({ children, name }) {
             }
             main  h1{  
             font-size: 25px;
+            font-family: 'roboto';
             margin-top: 50px;
-            margin-bottom:50px;
-            color: #191919;
+            margin-bottom:${pad};
+            color: #e71d36;
             text-align: center;
             }
 

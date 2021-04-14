@@ -12,7 +12,7 @@ body {
   font-family: NegozioPlus,-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 
-    background-image: radial-gradient(#ebc726, transparent 1px, 	#f6f7f9 1px),
+    background-image: radial-gradient(#ebc726, transparent 1px, 	#F0F2F0 1px),
     radial-gradient(#eb372e, transparent 1px, #ffffff 1px);
     background-position: 0 0, 25px 25px;
     background-size:50px 50px;

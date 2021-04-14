@@ -37,10 +37,11 @@ export default function VendedorRegistro({ children, name }) {
             }
 
             main  h1{  
+              font-family:'Roboto';
                 font-size: 25px;    
             margin-top: 50px;
             margin-bottom:50px;
-            color: #191919;
+            color: #2ec4b6;
             text-align: center;
             }
 

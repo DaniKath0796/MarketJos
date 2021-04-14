@@ -218,7 +218,7 @@ export default function RegistroVendedor(props) {
                 <p> Acepto los terminos y condiciones del sitio</p>
               </div>
               <div className="input-field">
-                <Button onClick={handleSubmit}> Registro</Button>
+                <Button color='#2ec4b6' onClick={handleSubmit}> Registro</Button>
               </div>
             </Centrado>
           </div>
@@ -281,7 +281,7 @@ export default function RegistroVendedor(props) {
             top: 12px;
             right: 10px;
             border: 8px solid;
-            border-color: #d5dbd9 transparent transparent transparent;
+            border-color: #2ec4b6 transparent transparent transparent;
             pointer-events: none;
           }
 
@@ -302,7 +302,7 @@ export default function RegistroVendedor(props) {
           .wrapper .form .input-field .input:focus,
           .wrapper .form .input-field .textarea:focus,
           .wrapper .form .input-field .custom-select select:focus {
-            border: 1px solid #242525;
+            border: 1px solid #2ec4b6;
           }
 
           .wrapper .form .input-field p {
@@ -325,7 +325,7 @@ export default function RegistroVendedor(props) {
           .wrapper .form .input-field .check .checkmark {
             width: 15px;
             height: 15px;
-            border: 1px solid #242525;
+            border: 1px solid #2ec4b6;
             display: block;
             position: relative;
           }
@@ -347,7 +347,7 @@ export default function RegistroVendedor(props) {
             .check
             input[type="checkbox"]:checked
             ~ .checkmark {
-            background: #242525;
+            background: #2ec4b6;
           }
 
           .wrapper
@@ -364,7 +364,7 @@ export default function RegistroVendedor(props) {
             padding: 8px 10px;
             font-size: 15px;
             border: 0px;
-            background: #242525;
+            background: #2ec4b6;
             color: #fff;
             cursor: pointer;
             border-radius: 3px;
@@ -372,7 +372,7 @@ export default function RegistroVendedor(props) {
           }
 
           .wrapper .form .input-field .btn:hover {
-            background: #242525;
+            background: #2ec4b6;
           }
 
           .wrapper .form .input-field:last-child {

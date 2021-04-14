@@ -4,11 +4,11 @@ import Head from "next/head";
 import Logeo from "../components/Logeo";
 import Button from "../components/Buttom";
 import Centrado from "../components/Centrado";
-import GoogleSvg from "../components/Svg/GoogleSvg";
 import { useContext, useState } from "react";
 import valid from "../utils/validCliente";
 import { PostData } from "../utils/fetchData";
 import { DataContext } from "../store/GlobalState";
+import ShopSvg from "../components/Svg/ShopSvg";
 
 export default function Register() {
   const initialState = {
@@ -47,9 +47,11 @@ export default function Register() {
           content="width=device-width, initial-scale=1.0"
         ></meta>
       </Head>
-      <Logeo name="Registrate">
+      <Logeo name="Registrate" pad='40px'>
         <section>
-
+          <div className="imag">
+            <ShopSvg width={100} height={100} fill="#e71d36" />
+          </div>
           <div className="form">
             <div></div>
 
@@ -66,7 +68,7 @@ export default function Register() {
             <div className="input-field">
               <label> Correo electronico</label>
               <input
-              required
+                required
                 type="email"
                 className="input"
                 name="email"
@@ -77,7 +79,7 @@ export default function Register() {
             <div className="input-field">
               <label> Contraseña</label>
               <input
-              required
+                required
                 type="password"
                 className="input"
                 name="password"
@@ -88,7 +90,7 @@ export default function Register() {
             <div className="input-field">
               <label> Confirmar contraseña</label>
               <input
-              required
+                required
                 type="password"
                 className="input"
                 name="cf_password"
@@ -99,38 +101,37 @@ export default function Register() {
           </div>
 
           <p>
-            Ya cuentas con una cuenta?
+            Ya cuentas con una cuenta?   
             <Link href="/login">
-              <a>Identifícate</a>
+              <a> Identifícate </a>
             </Link>
           </p>
 
           <Centrado>
-            <Button onClick={handleSubmit}>Regístrate</Button>
-
-            <Button>
-              <GoogleSvg width={25} height={25} />
-              Regístrate con google
+            <Button color="#e71d36" onClick={handleSubmit}>
+              Regístrate
             </Button>
           </Centrado>
         </section>
- 
       </Logeo>
 
-  
       <style jsx>
         {`
           p {
             color: gray;
           }
           a {
-            color: tomato;
+            color: #e71d36;
           }
           .form {
             width: 100%;
-            padding-top: 20vh;
-            margin-top: 30px;
-            margin-bottom: 20px;
+            padding-top: 20px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+          }
+          .imag {
+            margin: 0 auto;
+            padding:0;
           }
 
           .form .input-field {
@@ -157,10 +158,9 @@ export default function Register() {
           }
 
           .form .input-field .input:focus {
-            border: 0.1px solid #242525;
+            border: 0.1px solid #e71d36;
           }
 
-          
           section {
             display: grid;
             height: 50vh;

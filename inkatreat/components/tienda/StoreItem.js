@@ -6,9 +6,21 @@ export default function StoreItem({ id, ima, nombre, categoria, color }) {
     return (
       <>
         <Link href={`../../../tienda/${id}`}>
-          <a>{id}</a>
+          <a></a>
         </Link>
+        <style jsx>
+        {`
+          a {
+            position: absolute;
+            height: 280px;
+            width: 270px;
+            z-index: 1000;
+                      }`}
+          </style>
+        
       </>
+
+
     );
   };
 

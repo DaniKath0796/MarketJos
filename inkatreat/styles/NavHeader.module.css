@@ -1,11 +1,11 @@
 /* Desktop*/
 .header {
   display: flex;
-  background: #191919;
+  background: #ff9f1c;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 0px 10px;
-  height:3rem;
+  padding: 5px 10px;
+  height:4rem;
   width:100%;
   color: white;
   text-align:center;
