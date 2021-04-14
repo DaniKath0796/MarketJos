@@ -3,12 +3,11 @@ import Button from "./Buttom";
 import ContainerStore from "./items/ContainerStore";
 import Rating from "./Rating";
 import Valoracion from "./Valoracion";
-import Header from './Header'
-import Heart from './Svg/HeatSvg'
+import Header from "./Header";
+import Heart from "./Svg/HeatSvg";
 import ImagenItem from "./items/ImagenItem";
 import { useState } from "react";
 export default function Imagenstore({
- 
   name,
 
   imagen1,
@@ -19,60 +18,59 @@ export default function Imagenstore({
   stock,
   descripcion,
 }) {
-  const [heart,setHeart]=useState(null)
+  const [heart, setHeart] = useState(null);
 
   return (
     <>
-    <Header/>
-    <ContainerStore >
-      <div className="container1">
-        <div className="carrusel">
-         
-        <ImagenItem imagen={imagen1}/>
-        <ImagenItem imagen={imagen1}/>
-        <ImagenItem imagen={imagen1}/>
-        <ImagenItem imagen={imagen1}/>
-        <ImagenItem imagen={imagen1}/>
-        </div>
-        <div className="foto">
-          <Image
-            src={imagen1}
-            alt="Picture of the author"
-            width={270}
-            height={270}
-          />
-        </div>
-      </div>
-
-      <div className="container2">
-        <div className="titulo">{name}</div>
-        <Valoracion valor={5} />
-        <div className="precio">S/. {precio}</div>
-        <div className="stock">{stock} unidades disponibles</div>
-
-        <div className="descripcion">{descripcion}</div>
-        <Button ><Heart width={20} /> Lo quiero    </Button>
-      </div>
-      
-   
-      <div className="container3">
-     
-
-        
-          <label for="comment" >Danos tu opinion acerca de este producto:</label>
-          <input type="text" id="comment" name="comment" required className='coment'/>
-          <Rating/>
-          
-          <div className='botones'>
-          
-          <Button> Enviar </Button>
-          
+      <Header />
+      <ContainerStore>
+        <div className="container1">
+          <div className="carrusel">
+            <ImagenItem imagen={imagen1} />
+            <ImagenItem imagen={imagen1} />
+            <ImagenItem imagen={imagen1} />
+            <ImagenItem imagen={imagen1} />
+            <ImagenItem imagen={imagen1} />
           </div>
-          
-        
-      </div>
-</ContainerStore>
-      
+          <div className="foto">
+            <Image
+              src={imagen1}
+              alt="Picture of the author"
+              width={270}
+              height={270}
+            />
+          </div>
+        </div>
+
+        <div className="container2">
+          <div className="titulo">{name}</div>
+          <Valoracion valor={5} />
+          <div className="precio">S/. {precio}</div>
+          <div className="stock">{stock} unidades disponibles</div>
+
+          <div className="descripcion">{descripcion}</div>
+          <Button>
+            <Heart width={20} /> Lo quiero{" "}
+          </Button>
+        </div>
+
+        <div className="container3">
+          <label for="comment">Danos tu opinion acerca de este producto:</label>
+          <input
+            type="text"
+            id="comment"
+            name="comment"
+            required
+            className="coment"
+          />
+          <Rating />
+
+          <div className="botones">
+            <Button> Enviar </Button>
+          </div>
+        </div>
+      </ContainerStore>
+
       <style jsx>
         {`
 

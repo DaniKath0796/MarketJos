@@ -14,7 +14,6 @@ export default async (req, res) => {
 
 const getTiendas = async (req, res) => {
   try {
-    const rb = await Rubro.find();
     const tiendas = await Tienda.find(
       {},
       "nombreTienda direccion logo"
