@@ -44,6 +44,10 @@ const tiendaSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    rubroId: {
+      type: mongoose.Types.ObjectId,
+      ref: "rubro",
+    },
     role: {
       type: String,
       default: "tienda",

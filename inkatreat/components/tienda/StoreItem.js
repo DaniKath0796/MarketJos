@@ -1,12 +1,7 @@
 import Link from "next/Link";
 import Image from "next/Image";
-import StoreSvg from "./Svg/store";
-export default function StoreItem({
-  ima,
-  nombre,
-  categoria,
-  color = "#242525",
-}) {
+import StoreSvg from "../Svg/store";
+export default function StoreItem({ ima, nombre, categoria, color }) {
   return (
     //para las imagenes de los logos hay que poner la restriccion de que sea una imaden cuadrada
     <>

@@ -25,6 +25,7 @@ const registro = async (req, res) => {
       celularContacto,
       direccion,
       logo,
+      rubroId,
     } = req.body;
 
     const errMsg = valid(
@@ -54,6 +55,7 @@ const registro = async (req, res) => {
       celularContacto,
       direccion,
       logo,
+      rubroId,
     });
 
     await newUser.save();

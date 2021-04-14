@@ -1,5 +1,4 @@
 import connectDB from "../../../utils/connectDB";
-import Tienda from "../../../models/tiendaModelo";
 import Rubro from "../../../models/rubroModelo";
 
 connectDB();
@@ -7,23 +6,19 @@ connectDB();
 export default async (req, res) => {
   switch (req.method) {
     case "GET":
-      await getTiendas(req, res);
+      await getRubros(req, res);
       break;
   }
 };
 
-const getTiendas = async (req, res) => {
+const getRubros = async (req, res) => {
   try {
-    const rb = await Rubro.find();
-    const tiendas = await Tienda.find(
-      {},
-      "nombreTienda direccion logo"
-    ).populate("rubroId");
+    const rubros = await Rubro.find();
 
     res.json({
       status: "success",
-      result: tiendas.length,
-      tiendas,
+      result: rubros.length,
+      rubros,
     });
   } catch (err) {
     return res.status(500).json({ err: err.message });

@@ -3,17 +3,14 @@ import Link from "next/link";
 import { useState } from "react";
 import styles from "../styles/Home.module.css";
 import { useRouter } from "next/router";
-import StoreItem from "../components/StoreItem";
+import StoreItem from "../components/tienda/StoreItem";
 import Container from "../components/Container";
 import headerStyles from "../styles/Header.module.css";
 import { GetData } from "../utils/fetchData";
 
 export default function Home(props) {
   const router = useRouter();
-  const [stores, setStores] = useState(props.stores);
-
-  const [products, setProducts] = useState(props.productos);
-  console.log(products[3].logo);
+  const [tienda, setStores] = useState(props.tiendas);
 
   return (
     <>
@@ -26,11 +23,18 @@ export default function Home(props) {
           Te ayudamos a que el mundo te vea
         </p>
         <Container>
-          <StoreItem
-            ima={products[3].logo}
-            nombre={products[3].nombreTienda}
-            categoria="regalos"
-          />
+          {tienda.lenght === 0 ? (
+            <h2>No hay Tiendas</h2>
+          ) : (
+            tienda.map((tienda) => (
+              <StoreItem
+                ima={tienda.logo}
+                nombre={tienda.nombreTienda}
+                categoria={tienda.rubroId.nombre}
+                color={tienda.rubroId.color}
+              />
+            ))
+          )}
         </Container>
       </body>
 
@@ -43,7 +47,7 @@ export async function getServerSideProps() {
   const res = await GetData("tienda");
   return {
     props: {
-      productos: res.tiendas,
+      tiendas: res.tiendas,
       result: res.result,
     },
   };

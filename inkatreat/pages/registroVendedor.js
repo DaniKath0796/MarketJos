@@ -6,8 +6,11 @@ import VendedorRegistro from "../components/VendedorRegistro";
 import { useState } from "react";
 import valid from "../utils/validTienda";
 import { PostData } from "../utils/fetchData";
+import { GetData } from "../utils/fetchData";
 
-export default function RegistroVendedor() {
+export default function RegistroVendedor(props) {
+  const [rubroLista, setStores] = useState(props.rubros);
+
   const initialState = {
     nombreTienda: "",
     nombreEncargado: "",
@@ -18,6 +21,7 @@ export default function RegistroVendedor() {
     celularContacto: "",
     direccion: "",
     logo: "",
+    rubroId: "",
   };
   const [userData, setUserData] = useState(initialState);
   const {
@@ -30,6 +34,7 @@ export default function RegistroVendedor() {
     celularContacto,
     direccion,
     logo,
+    rubroId,
   } = userData;
 
   const handleChangeInput = (e) => {
@@ -41,6 +46,12 @@ export default function RegistroVendedor() {
     var select = document.getElementById("tipoTienda");
     select.selectedIndex;
     setUserData({ ...userData, ["tipoTienda"]: select.value });
+  }
+
+  function selectNextRubro() {
+    var select = document.getElementById("rubroTienda");
+    select.selectedIndex;
+    setUserData({ ...userData, ["rubroId"]: select.value });
   }
 
   const onChange = (e) => {
@@ -136,6 +147,25 @@ export default function RegistroVendedor() {
                 </select>
               </div>
             </div>
+
+            <div className="input-field">
+              <label> Rubro de tienda</label>
+              <div className="custom-select">
+                <select id="rubroTienda" onChange={selectNextRubro}>
+                  <option value="Seleccionar">Seleccionar </option>
+                  {rubroLista.lenght === 0 ? (
+                    <option value="Seleccionar">Seleccionar </option>
+                  ) : (
+                    rubroLista.map((rubroLista) => (
+                      <option value={rubroLista._id}>
+                        {rubroLista.nombre}
+                      </option>
+                    ))
+                  )}
+                </select>
+              </div>
+            </div>
+
             <div className="input-field">
               <label> Email de la tienda</label>
               <input
@@ -365,4 +395,14 @@ export default function RegistroVendedor() {
       </style>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const res = await GetData("rubro");
+  return {
+    props: {
+      rubros: res.rubros,
+      result: res.result,
+    },
+  };
 }
