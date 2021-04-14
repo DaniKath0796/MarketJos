@@ -1,16 +1,22 @@
 import Link from "next/Link";
 import Image from "next/Image";
 import StoreSvg from "../Svg/store";
-export default function StoreItem({ ima, nombre, categoria, color }) {
+export default function StoreItem({ id, ima, nombre, categoria, color }) {
+  const tiendaLink = () => {
+    return (
+      <>
+        <Link href={`../../../tienda/${id}`}>
+          <a>{id}</a>
+        </Link>
+      </>
+    );
+  };
+
   return (
     //para las imagenes de los logos hay que poner la restriccion de que sea una imaden cuadrada
     <>
       <div className="prueba">
-        <div className="redirect">
-          <Link href="/pruebaStore">
-            <a></a>
-          </Link>
-        </div>
+        <div className="redirect">{tiendaLink()}</div>
         <div className="container">
           <div className="header">
             <div className="ima">
