@@ -59,6 +59,7 @@ export default function RegistroVendedor(props) {
     let reader = new FileReader();
     reader.readAsDataURL(files[0]);
     reader.onload = (e) => {
+      //console.log(e.target.result);
       setUserData({ ...userData, ["logo"]: e.target.result });
     };
   };
@@ -218,7 +219,10 @@ export default function RegistroVendedor(props) {
                 <p> Acepto los terminos y condiciones del sitio</p>
               </div>
               <div className="input-field">
-                <Button color='#2ec4b6' onClick={handleSubmit}> Registro</Button>
+                <Button color="#2ec4b6" onClick={handleSubmit}>
+                  {" "}
+                  Registro
+                </Button>
               </div>
             </Centrado>
           </div>

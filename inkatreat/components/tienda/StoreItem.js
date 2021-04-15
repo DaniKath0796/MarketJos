@@ -1,11 +1,11 @@
 import Link from "next/Link";
 import Image from "next/Image";
 import StoreSvg from "../Svg/store";
-export default function StoreItem({ name, ima, nombre, categoria, color }) {
+export default function StoreItem({ name, id, ima, nombre, categoria, color }) {
   const tiendaLink = () => {
     return (
       <>
-        <Link href={`../../../tienda/${name}`}>
+        <Link href={`../../../tienda/${name}/${id}`}>
           <a></a>
         </Link>
         <style jsx>

@@ -29,6 +29,7 @@ export default function Home(props) {
             tienda.map((tienda) => (
               <StoreItem
                 name={tienda.nombreTienda}
+                id={tienda._id}
                 ima={tienda.logo}
                 nombre={tienda.nombreTienda}
                 categoria={tienda.rubroId.nombre}

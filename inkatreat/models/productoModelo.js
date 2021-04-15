@@ -20,12 +20,8 @@ const productoSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
-    images: {
+    imagenes: {
       type: Array,
-      required: true,
-    },
-    categorias: {
-      type: String,
       required: true,
     },
   },
