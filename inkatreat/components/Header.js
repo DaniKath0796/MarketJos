@@ -1,6 +1,6 @@
 import headerStyles from "../styles/Header.module.css";
 
-const Header = ({ nombre = "Nombre de la tienda" }) => {
+const Header = ({ nombre }) => {
   return (
     <>
       <div className={headerStyles.titulo}>

@@ -7,34 +7,28 @@ import Header from "./Header";
 import Heart from "./Svg/HeatSvg";
 import ImagenItem from "./items/ImagenItem";
 import { useState } from "react";
-export default function Imagenstore({
-  name,
 
-  imagen1,
-  imagen2,
-  imagen3,
-  imagen4,
+export default function Imagenstore({
+  nombreTienda,
+  name,
+  imagenes,
   precio,
-  stock,
   descripcion,
 }) {
   const [heart, setHeart] = useState(null);
-
   return (
     <>
-      <Header />
+      <Header nombre={nombreTienda} />
       <ContainerStore>
         <div className="container1">
           <div className="carrusel">
-            <ImagenItem imagen={imagen1} />
-            <ImagenItem imagen={imagen1} />
-            <ImagenItem imagen={imagen1} />
-            <ImagenItem imagen={imagen1} />
-            <ImagenItem imagen={imagen1} />
+            {imagenes.map((imagen) => (
+              <ImagenItem imagen={imagen} />
+            ))}
           </div>
           <div className="foto">
             <Image
-              src={imagen1}
+              src={imagenes[0]}
               alt="Picture of the author"
               width={270}
               height={270}
@@ -46,8 +40,6 @@ export default function Imagenstore({
           <div className="titulo">{name}</div>
           <Valoracion valor={5} />
           <div className="precio">S/. {precio}</div>
-          <div className="stock">{stock} unidades disponibles</div>
-
           <div className="descripcion">{descripcion}</div>
           <Button>
             <Heart width={20} /> Lo quiero{" "}
