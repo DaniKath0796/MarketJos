@@ -5,7 +5,7 @@ import { breakpoint } from "../styles/theme";
 export default function VendedorRegistro({ children, name }) {
   return (
     <>
-      <div className={loginStyles.login}>
+      <div >
         <main>
           <h1> {name}</h1>
           {children}
@@ -16,24 +16,25 @@ export default function VendedorRegistro({ children, name }) {
                 
                     div {
                 display: grid;
-                height: 80vh;
+                height: 80%;
                 width: 100%;
                 align: center;
                 margin: 0 auto;                
                 position: relative;
                 place-items: center;
+                align-items: center;
+                text-align: center;
                 z-index: 1;
-                padding: 0;
-                box-sizing: border-box;
                 
             }
             main {
                 background: #fff;
                 border-radius: 10px;
                 box-shadow: 0 10px 25px rgba(0, 0, 0, .1);
-                height: 100%;
+                height: 80%;
                 width: 100%;
                 padding: 0 10px;
+                margin-bottom: 50px;
             }
 
             main  h1{  

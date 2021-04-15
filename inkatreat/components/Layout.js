@@ -5,10 +5,11 @@ import Header from "./Header";
 import Notify from "./Notify";
 
 import styles from "../styles/Home.module.css";
+import Dropdown from "./items/Dropdown";
 export default function Layout({ children }) {
   return (
     <>
-      <NavHeader />
+      <Dropdown></Dropdown>
      <div className='separator'> </div>
       <div className={styles.container}>
         <main className={styles.main}>
@@ -19,7 +20,7 @@ export default function Layout({ children }) {
 
       <style jsx>{`
       .separator{
-        height:200px;
+        height:150px;
       }
       `}
       </style>
