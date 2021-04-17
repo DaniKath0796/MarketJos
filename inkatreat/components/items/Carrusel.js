@@ -1,6 +1,6 @@
 import Foto from "./Foto";
 import Carousel from "react-elastic-carousel";
-import Item from "./Item";
+import Item from "./item";
 
 //<Item><Foto imagen={...} /></Item>
 export default function Carrusel({ nombreProducto, imagenes }) {
