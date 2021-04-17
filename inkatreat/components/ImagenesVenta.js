@@ -1,4 +1,4 @@
-import Image from "next/Image";
+import Image from "next/image";
 import Button from "./Buttom";
 import ContainerStore from "./items/ContainerStore";
 import Rating from "./Rating";
