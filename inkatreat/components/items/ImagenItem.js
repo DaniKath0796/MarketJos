@@ -21,10 +21,10 @@ export default function ImagenItem({imagen}){
             width: 50px;
             margin: 0 0;
             display: flex;
-            border-bottom: 1px solid;
-            border-top: 1px solid;
-            border-left: 1px solid;
-            border-right: 1px solid;
+            
+            cursor: pointer;          }
+          .caja:hover{
+            box-shadow: 0px 0px 5px .5px gray;
           }
 
         `}

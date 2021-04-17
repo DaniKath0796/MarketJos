@@ -30,8 +30,8 @@ export default function Imagenstore({
             <Image
               src={imagenes[0]}
               alt="Picture of the author"
-              width={270}
-              height={270}
+              width={325}
+              height={325}
             />
           </div>
         </div>
@@ -100,33 +100,31 @@ export default function Imagenstore({
           }
           .foto {
            /* background-color: orange;*/
-            height: 270px;
-            width: 270px;
+            height: 325px;
+            width: 325px;
             align-items: center;
             justify-content: center;
             position: relative;
             display: flex;
-            border-bottom: 1px solid;
-            border-top: 1px solid;
-            border-left: 1px solid;
-            border-right: 1px solid;
+            
           }
 
           .container1 {
-             /* background-color: pink;*/
-              height: 300px;
-              width: 400px;
-              padding: 15px 10px;
+             background-color: #e9ecef;
+              height: 365px;
+              width: 435px;
+              padding: 15px 5px;
               display: block;
             margin-left:auto;
             margin-right:auto;
             box-shadow: 0px 0px 5px .5px gray;
+            
           }
 
           .container2 {
-         /*   background-color:tomato;*/
-              height: 300px;
-              width: 400px;
+         /*background-color:tomato;*/
+              height: 365px;
+              width: 435px;
               padding: 15px 10px;
               padding-left:20px;
               display: block;
@@ -188,15 +186,16 @@ export default function Imagenstore({
              font-family:'Arial';
          }
          .descripcion{
-          background-color: #f5f3f4;
-             height: 150px;
+          /*background-color: #f5f3f4;*/
+             height: 200px;
              margin:0 auto;
              text-align: left;
              font-family:'roboto';
              font-size:12.5px;
              font weight:normal;
             justify-content: center;
-            padding-top: 5px;
+            padding-top: 10px;
+            margin-bottom: 10px;
             
              
          }
