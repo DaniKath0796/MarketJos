@@ -1,5 +1,5 @@
 import Nav from "./Nav";
-import Head from "next/Head";
+import Head from "next/head";
 import NavHeader from "./NavHeader";
 import Header from "./Header";
 import Notify from "./Notify";
