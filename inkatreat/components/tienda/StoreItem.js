@@ -1,4 +1,4 @@
-import Link from "next/iink";
+import Link from "next/link";
 import Image from "next/image";
 import StoreSvg from "../Svg/store";
 export default function StoreItem({ name, id, ima, nombre, categoria, color }) {
