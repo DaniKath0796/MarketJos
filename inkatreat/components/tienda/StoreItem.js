@@ -1,5 +1,5 @@
-import Link from "next/Link";
-import Image from "next/Image";
+import Link from "next/iink";
+import Image from "next/image";
 import StoreSvg from "../Svg/store";
 export default function StoreItem({ name, id, ima, nombre, categoria, color }) {
   const tiendaLink = () => {
